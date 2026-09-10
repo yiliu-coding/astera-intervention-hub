@@ -60,6 +60,16 @@ The trust control layer demonstrates:
 - Smart escrow with locked, in-review, and released milestones
 - Evidence-linked delivery and multidimensional reputation
 
+### Workspace: `/workspace`
+
+An interactive presentation demo showing the product layer between matching and delivery:
+
+- Demand and supplier role views
+- Explainable supplier match scores
+- Milestone status and evidence review
+- Reputation signals across speed, reliability, and quality
+- Moderated proactive outreach from draft to review queue
+
 The current Vipps and company verification interactions are frontend concept flows. A production implementation would connect them to Vipps Login/API and an appropriate Norwegian organization registry or verification provider.
 
 ## Technology

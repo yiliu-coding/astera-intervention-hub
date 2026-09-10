@@ -86,6 +86,7 @@ export default function Page() {
             <a href="#scale" className="transition hover:text-white">Scale</a>
             <a href="/demand" className="transition hover:text-white">Demand</a>
             <a href="/supplier" className="transition hover:text-white">Supplier</a>
+            <a href="/workspace" className="transition hover:text-white">Workspace</a>
           </div>
 
           <a href="/supplier" className="rounded-full border border-blue-400/40 bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-300 transition hover:bg-blue-500/20">

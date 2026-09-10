@@ -72,6 +72,7 @@ export default function SupplierPage() {
             <a href="/demand" className="hover:text-white">Demand</a>
             <a href="/supplier" className="text-white">Supplier</a>
             <a href="/trust" className="hover:text-white">Trust</a>
+            <a href="/workspace" className="hover:text-white">Workspace</a>
           </div>
 
           <a href="/" className="rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-2 text-sm font-medium text-emerald-200">

@@ -86,6 +86,7 @@ export default function TrustPage() {
             <a href="/demand" className="transition hover:text-white">Demand</a>
             <a href="/supplier" className="transition hover:text-white">Supplier</a>
             <a href="/trust" className="text-white">Trust</a>
+            <a href="/workspace" className="transition hover:text-white">Workspace</a>
           </div>
 
           <a href="/demand" className="rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:bg-emerald-500/20">

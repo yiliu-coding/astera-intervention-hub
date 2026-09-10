@@ -45,6 +45,7 @@ export default function DemandPage() {
             <a href="/demand" className="text-white">Demand</a>
             <a href="/supplier" className="hover:text-white">Supplier</a>
             <a href="/trust" className="hover:text-white">Trust</a>
+            <a href="/workspace" className="hover:text-white">Workspace</a>
           </div>
 
           <a href="/" className="rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-200">
