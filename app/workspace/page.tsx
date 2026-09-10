@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import {
   AlertTriangle,
   ArrowRight,
+  BarChart3,
   Check,
   CheckCircle2,
   ChevronRight,
@@ -11,6 +12,7 @@ import {
   FileText,
   Gauge,
   Lock,
+  Lightbulb,
   MessageSquareText,
   Send,
   ShieldCheck,
@@ -33,11 +35,39 @@ const milestones = [
   { title: 'Cache rollout', status: 'Next', detail: 'Production rollout follows acceptance of the optimization milestone.' },
 ];
 
+const intelligenceViews = {
+  patterns: {
+    label: 'Challenge patterns',
+    title: 'Checkout performance is becoming a repeatable intervention.',
+    insight: '42 similar interventions found across anonymized projects',
+    detail: 'The most common combination is render churn plus cache gaps. Astera can suggest the diagnostic sequence before a new client has to describe the issue perfectly.',
+    metric: '68%',
+    metricLabel: 'faster initial scoping',
+  },
+  benchmark: {
+    label: 'Peer benchmarks',
+    title: 'Give a business a useful baseline, not a generic promise.',
+    insight: 'Performance and delivery evidence compared against a relevant peer set',
+    detail: 'A client can see how its baseline, expected effort, and milestone pace compare with similar interventions without exposing another company’s identity or raw data.',
+    metric: '3.2x',
+    metricLabel: 'more confident decisions',
+  },
+  playbooks: {
+    label: 'Reusable playbooks',
+    title: 'Every completed intervention improves the next one.',
+    insight: 'A validated playbook is ready for the next high-fit match',
+    detail: 'Successful evidence sequences become reusable guidance for suppliers and clearer intake prompts for demanders. Human review keeps weak or context-specific advice out of the shared layer.',
+    metric: '17',
+    metricLabel: 'validated playbooks',
+  },
+};
+
 export default function WorkspacePage() {
   const [role, setRole] = useState<'demand' | 'supplier'>('demand');
   const [activeMatch, setActiveMatch] = useState(0);
   const [activeMilestone, setActiveMilestone] = useState(1);
   const [outreachStatus, setOutreachStatus] = useState<'draft' | 'review' | 'queued'>('draft');
+  const [intelligenceView, setIntelligenceView] = useState<keyof typeof intelligenceViews>('patterns');
   const summaryCards = [
     { label: 'Project health', value: 'On track', icon: CheckCircle2, color: 'text-emerald-300' },
     { label: 'Milestone progress', value: '2 / 3', icon: ClipboardCheck, color: 'text-blue-300' },
@@ -85,6 +115,28 @@ export default function WorkspacePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 pb-20 md:px-8 xl:px-0"><div className="grid gap-5 md:grid-cols-3"><div className="rounded-[24px] border border-white/10 bg-white/5 p-5"><Users className="h-5 w-5 text-blue-300" /><h3 className="mt-4 font-medium text-white">Role dashboards</h3><p className="mt-2 text-sm leading-6 text-slate-400">The same intervention is presented differently to the business and the supplier without duplicating the underlying trust state.</p></div><div className="rounded-[24px] border border-white/10 bg-white/5 p-5"><WalletCards className="h-5 w-5 text-emerald-300" /><h3 className="mt-4 font-medium text-white">Evidence-linked delivery</h3><p className="mt-2 text-sm leading-6 text-slate-400">Every milestone has a visible state and evidence explanation, ready to connect to real storage and review APIs later.</p></div><div className="rounded-[24px] border border-white/10 bg-white/5 p-5"><ShieldCheck className="h-5 w-5 text-amber-300" /><h3 className="mt-4 font-medium text-white">Governed prevention</h3><p className="mt-2 text-sm leading-6 text-slate-400">Supplier insights become respectful, bounded outreach rather than unmoderated vulnerability claims.</p></div></div></section>
+
+      <section className="mx-auto max-w-7xl px-5 pb-20 md:px-8 xl:px-0">
+        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-violet-400/20 bg-violet-500/10 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-violet-300"><Lightbulb className="h-3.5 w-3.5" /> Collective intelligence</div>
+            <h2 className="text-3xl font-semibold text-white md:text-4xl">The network gets smarter without making private problems public.</h2>
+            <p className="mt-4 max-w-xl text-lg leading-7 text-slate-300">Once Astera has enough verified interventions, shared challenge patterns, evidence sequences, and delivery outcomes can improve the service for everyone.</p>
+            <div className="mt-6 flex items-center gap-3 text-sm text-slate-400"><Lock className="h-4 w-4 text-emerald-300" /> Aggregated, anonymized, permission-aware learning</div>
+          </div>
+
+          <div className="glass rounded-[30px] p-5">
+            <div className="mb-4 flex flex-wrap gap-2">
+              {(Object.keys(intelligenceViews) as Array<keyof typeof intelligenceViews>).map((key) => <button key={key} onClick={() => setIntelligenceView(key)} className={`rounded-full px-3 py-2 text-xs font-medium transition ${intelligenceView === key ? 'bg-violet-500 text-white' : 'border border-white/10 bg-white/5 text-slate-400 hover:text-white'}`}>{intelligenceViews[key].label}</button>)}
+            </div>
+            <motion.div key={intelligenceView} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="rounded-[24px] border border-violet-400/20 bg-violet-500/5 p-5">
+              <div className="flex items-start justify-between gap-4"><div><div className="text-[10px] uppercase tracking-[0.18em] text-violet-300">{intelligenceViews[intelligenceView].insight}</div><h3 className="mt-3 text-2xl font-semibold text-white">{intelligenceViews[intelligenceView].title}</h3></div><BarChart3 className="h-5 w-5 shrink-0 text-violet-300" /></div>
+              <p className="mt-4 text-sm leading-6 text-slate-300">{intelligenceViews[intelligenceView].detail}</p>
+              <div className="mt-5 flex items-end justify-between border-t border-white/10 pt-4"><div><div className="text-3xl font-semibold text-violet-200">{intelligenceViews[intelligenceView].metric}</div><div className="text-[10px] uppercase tracking-[0.16em] text-slate-500">{intelligenceViews[intelligenceView].metricLabel}</div></div><div className="max-w-[220px] text-right text-xs leading-5 text-slate-500">No client names, raw briefs, or proprietary metrics enter the shared insight layer.</div></div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

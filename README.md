@@ -69,6 +69,18 @@ An interactive presentation demo showing the product layer between matching and 
 - Milestone status and evidence review
 - Reputation signals across speed, reliability, and quality
 - Moderated proactive outreach from draft to review queue
+- Collective intelligence views for anonymized patterns, peer benchmarks, and reusable playbooks
+
+### Collective intelligence
+
+Once the network has enough verified clients, suppliers, interventions, and delivery evidence, Astera can create a privacy-preserving learning layer:
+
+- Aggregate recurring technical challenges into recognizable patterns.
+- Give businesses relevant peer benchmarks without exposing another client's identity or raw metrics.
+- Turn successful evidence sequences into reusable diagnostic and delivery playbooks.
+- Improve AI intake prompts, matching, prevention suggestions, and supplier recommendations over time.
+
+This layer should use consent, aggregation thresholds, anonymization, source provenance, human review, and deletion controls. Private briefs, client names, raw financial metrics, and proprietary evidence should not automatically enter the shared insight layer.
 
 The current Vipps and company verification interactions are frontend concept flows. A production implementation would connect them to Vipps Login/API and an appropriate Norwegian organization registry or verification provider.
 
