@@ -1,5 +1,7 @@
 # Astera Intervention Hub
 
+[中文 README](README.zh-CN.md)
+
 Astera is an AI-assisted technical intervention platform for small businesses, freelancers, super-individuals, and boutique technical teams.
 
 It is designed to solve a specific problem: a business may know that something technical is hurting growth, reliability, or security, but may not know how to diagnose, scope, or safely commission the fix. Astera turns that uncertainty into a protected, measurable intervention.
