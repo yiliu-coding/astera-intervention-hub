@@ -84,6 +84,18 @@ This layer should use consent, aggregation thresholds, anonymization, source pro
 
 The current Vipps and company verification interactions are frontend concept flows. A production implementation would connect them to Vipps Login/API and an appropriate Norwegian organization registry or verification provider.
 
+## Demo Scope
+
+This repository is a presentation-ready frontend concept. The interactive examples use local React state so the product logic can be demonstrated without external services:
+
+- Profile generation is simulated after a public URL is entered.
+- Supplier matching shows explainable sample scores and reasons.
+- Milestone evidence can be selected and reviewed in the workspace.
+- Preventive outreach moves through draft, review, and moderation states.
+- Collective intelligence switches between patterns, benchmarks, and playbooks.
+
+The demo intentionally does not claim to perform real identity verification, payments, escrow, AI inference, data ingestion, or message delivery.
+
 ## Technology
 
 - Next.js 14 with the App Router
@@ -123,6 +135,7 @@ app/
   demand/page.tsx       # Demand-side experience
   supplier/page.tsx     # Supplier-side experience
   trust/page.tsx        # Trust and verification experience
+  workspace/page.tsx    # Interactive presentation workspace
   globals.css           # Global styling and visual system
 business_strategy_summary.md
 generate_ppt.py         # English strategy deck generator
